@@ -11,6 +11,7 @@ queue()
         show_month(ndx);
         show_day_of_week(ndx);
         show_day_of_month(ndx);
+        show_total_number(ndx);
         dc.renderAll();
     }
 /* Bar chart showing yearly births*/
@@ -134,3 +135,12 @@ function show_day_of_month(ndx) {
         .yAxis().ticks(10);
        
   }
+/*Number display chart showing total births*/
+function show_total_number(ndx){
+    var group = ndx.groupAll().reduceSum(dc.pluck('births'));
+
+    dc.numberDisplay("#total-number")
+    .transitionDuration(800)
+    .valueAccessor(function(d){return d})
+    .group(group);   
+}     
