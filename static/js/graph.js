@@ -9,7 +9,8 @@ queue()
        
         show_year(ndx);
         show_month(ndx);
-        show_day_of_week(ndx)
+        show_day_of_week(ndx);
+        show_day_of_month(ndx);
         dc.renderAll();
     }
 /* Bar chart showing yearly births*/
@@ -111,3 +112,25 @@ function show_day_of_week(ndx){
                              }))
       .ordering(function(d) {return d.name });
 }
+
+/*Bar chart showing births daily*/
+function show_day_of_month(ndx) {
+    var dim = ndx.dimension(dc.pluck('date_of_month'));
+    var group = dim.group().reduceSum(dc.pluck('births'));
+  
+    dc.barChart("#date-of-month")
+        .width(1000)
+        .height(330)
+        .margins({top: 10, right: 50, bottom: 30, left: 50})
+        .dimension(dim)
+        .group(group)
+        .transitionDuration(500)
+        .ordering(function(d) { return +d.key; })
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .xAxisLabel("Day")
+        .yAxisLabel("Births")
+        .yAxis().ticks(10);
+       
+  }
