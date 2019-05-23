@@ -9,7 +9,7 @@ queue()
        
         show_year(ndx);
         show_month(ndx);
-        
+        show_day_of_week(ndx)
         dc.renderAll();
     }
 /* Bar chart showing yearly births*/
@@ -74,4 +74,40 @@ function show_month(ndx){
           return "December";
        
       })
+}
+
+/*Pie chart showing days of the week*/
+function show_day_of_week(ndx){
+    var chart =   dc.pieChart('#day-of-week')
+
+    var dim = ndx.dimension(dc.pluck('day_of_week'));
+    
+    var group = dim.group().reduceSum(dc.pluck('births'));
+  
+     chart
+      .height(330)
+      .radius(90)
+      .innerRadius(20)
+      .externalRadiusPadding(0)
+      .transitionDuration(1500)
+      .dimension(dim)
+      .group(group)
+      .legend(dc.legend().legendText(function(d ) {
+                              if(d.name== 1)
+                                return "Monday";
+                                if(d.name== 2)
+                              return "Tuesday";
+                                if(d.name== 3)
+                               return "Wednesday";
+                              if(d.name== 4)
+                               return "Thursday";
+                              if(d.name== 5)
+                                 return "Friday";
+                                 if(d.name== 6)
+                                return "Saturday";
+                                 if(d.name== 7)
+                                return "Sunday";
+                                 
+                             }))
+      .ordering(function(d) {return d.name });
 }
