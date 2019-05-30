@@ -1,0 +1,66 @@
+.scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+/*RWD Grid-view W3Schools******************/
+* {
+  box-sizing: border-box;
+}
+.col {
+  float: left;
+  padding: 0px;
+  height: 45vh;
+}
+.grid-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* Grid-view small screen devices */
+.col{
+  text-align: center;
+  width: 100%;
+  min-width: 650px;
+}
+
+@media only screen and (min-width: 725px) {
+  /* Desktop and larger screens */
+.col{
+  width: 80%;
+  min-width: 650px;
+  float: none;
+  margin: auto;
+}
+.sub-col{
+  width: 50%;
+}
+
+}
+
+@media only screen and (min-width: 1325px) {
+  /* Desktop and larger screens */
+ 
+ .col{
+   width: 50%;
+   float: left;
+   margin: 0;
+ }
+
+}
+
+#year, #month, #date-of-month, #day-of-week,#total-number{
+  width: 95%;
+  height:95%;
+  border:solid;
+  border-radius: 5px;
+  margin: 20px;
+}
+#total-number{
+  font-size: 50px;
+}
+.col{
+  height: 45vh;
+  
+}
+

@@ -1,31 +1,41 @@
 /*Loads data*/
 queue()
     .defer(d3.csv, "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv")
-    .await(makeGraphs);
+    .await(initialise_graphs);
+
+    function resize_graphs(error, birthData){
+      var ndx = crossfilter(birthData);
+      show_year(ndx, 0);
+      show_month(ndx, 0);
+      show_day_of_week(ndx, 0);
+      show_day_of_month(ndx, 0);
+      show_total_number(ndx, 0);
+      dc.renderAll();
+    }
 
 /*Invokes and renders individual chart making functions */ 
-    function makeGraphs(error, salaryData) {
-        var ndx = crossfilter(salaryData);
+    function initialise_graphs(error, birthData) {
+        var ndx = crossfilter(birthData);
        
-        show_year(ndx);
-        show_month(ndx);
-        show_day_of_week(ndx);
-        show_day_of_month(ndx);
-        show_total_number(ndx);
+        show_year(ndx, 500);
+        show_month(ndx, 500);
+        show_day_of_week(ndx, 500);
+        show_day_of_month(ndx, 500);
+        show_total_number(ndx, 500);
         dc.renderAll();
     }
 /* Bar chart showing yearly births*/
-    function show_year(ndx) {
+    function show_year(ndx, i) {
         var dim = ndx.dimension(dc.pluck('year'));
         var group = dim.group().reduceSum(dc.pluck('births'));
         
         dc.barChart("#year")
-            .width(730)
-            .height(400)
+            .width(null)
+            .height(null)
             .margins({top: 10, right: 50, bottom: 30, left: 50})
             .dimension(dim)
             .group(group)
-            .transitionDuration(500)
+            .transitionDuration(i)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .elasticY(true)
@@ -36,18 +46,19 @@ queue()
     }
 
 /*Bar chart showing montly births */
-function show_month(ndx){
+function show_month(ndx, i){
 
     var dim = ndx.dimension(dc.pluck('month'));
     var group = dim.group().reduceSum(dc.pluck('births'));
 
     dc.rowChart("#month")
-    .width(768)
-    .height(400)
+    .width(null)
+    .height(null)
+    .ordinalColors(['#1f77b4'])
     .dimension(dim)
     .group(group)
     .ordering(function(d) { return +d.key; })
-    .transitionDuration(900)
+    .transitionDuration(i)
     .elasticX(true).group(group)
     .label(function(d){
         if(d.key == 1)
@@ -79,7 +90,7 @@ function show_month(ndx){
 }
 
 /*Pie chart showing days of the week*/
-function show_day_of_week(ndx){
+function show_day_of_week(ndx, i){
     var chart =   dc.pieChart('#day-of-week')
 
     var dim = ndx.dimension(dc.pluck('day_of_week'));
@@ -87,11 +98,11 @@ function show_day_of_week(ndx){
     var group = dim.group().reduceSum(dc.pluck('births'));
   
      chart
-      .height(330)
-      .radius(90)
+      .height(null)
+      .radius(120)
       .innerRadius(20)
       .externalRadiusPadding(0)
-      .transitionDuration(1500)
+      .transitionDuration(i)
       .dimension(dim)
       .group(group)
       .legend(dc.legend().legendText(function(d ) {
@@ -115,17 +126,17 @@ function show_day_of_week(ndx){
 }
 
 /*Bar chart showing births daily*/
-function show_day_of_month(ndx) {
+function show_day_of_month(ndx, i) {
     var dim = ndx.dimension(dc.pluck('date_of_month'));
     var group = dim.group().reduceSum(dc.pluck('births'));
   
     dc.barChart("#date-of-month")
-        .width(1000)
-        .height(330)
+        .width(null)
+        .height(null)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(dim)
         .group(group)
-        .transitionDuration(500)
+        .transitionDuration(i)
         .ordering(function(d) { return +d.key; })
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
@@ -136,11 +147,33 @@ function show_day_of_month(ndx) {
        
   }
 /*Number display chart showing total births*/
-function show_total_number(ndx){
+function show_total_number(ndx, i){
     var group = ndx.groupAll().reduceSum(dc.pluck('births'));
 
     dc.numberDisplay("#total-number")
-    .transitionDuration(800)
+    .transitionDuration(i)
     .valueAccessor(function(d){return d})
     .group(group);   
 }     
+
+
+
+
+
+ 
+$(document).ready(function(){
+  var resizeTimer;
+$(window).on('resize', function(e) {
+
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+
+
+    
+    queue()
+    .defer(d3.csv, "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv")
+    .await(resize_graphs);
+  }, 50);
+
+});
+});
