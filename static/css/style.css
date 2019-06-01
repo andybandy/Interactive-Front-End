@@ -3,38 +3,34 @@
     flex-wrap: nowrap;
     overflow-x: auto;
 }
-/*RWD Grid-view W3Schools******************/
-* {
-  box-sizing: border-box;
-}
-[class*="col"] {
+
+.chart-box, .pie-and-total-box {
   float: left;
   padding: 0px;
   height: 45vh;
+  min-height: 300px;
+ 
 }
 
-.grid-row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-/* Grid-view small screen devices */
-.col{
+/* small screen devices */
+.chart-box{
   text-align: center;
   width: 100%;
   min-width: 650px;
 }
+.pie-and-total-box{
+  width: 100%;
+}
 
 @media only screen and (min-width: 725px) {
-  /* Desktop and larger screens */
-.col{
+  /* Tablets and larger screens */
+.chart-box{
   width: 80%;
-  min-width: 650px;
   float: none;
   margin: auto;
 }
-.sub-col{
-  width: 50%;
+.pie-and-total-box{
+  width: 49%;
 }
 
 }
@@ -42,7 +38,7 @@
 @media only screen and (min-width: 1325px) {
   /* Desktop and larger screens */
  
- .col{
+ .chart-box{
    width: 50%;
    float: left;
    margin: 0;
@@ -60,8 +56,6 @@
 #total-number{
   font-size: 50px;
 }
-.col{
-  height: 45vh;
-  
-}
+
+
 

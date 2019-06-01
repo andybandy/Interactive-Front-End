@@ -105,7 +105,7 @@ function show_day_of_week(ndx, i){
       .transitionDuration(i)
       .dimension(dim)
       .group(group)
-      .legend(dc.legend().legendText(function(d ) {
+      .legend(dc.legend().x(20).y(10).legendText(function(d ) {
                               if(d.name== 1)
                                 return "Monday";
                                 if(d.name== 2)
