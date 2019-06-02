@@ -6,8 +6,13 @@
 * {
   box-sizing: border-box;
 }
+body{background-color: #EDEFEE;
+  font-family: quicksand;
+}
 main{
-  margin: 10px
+  margin: 10px;
+  text-align: center;
+  
 }
 /*Headbar*********************/
 .head-bar{
@@ -27,12 +32,13 @@ main{
     padding: 12px 0;
     transition: all 0.2s ease;
     color: white;
-    font-size: 85px;
-    background-color: rgb(31, 119, 180);
+    font-size: 82px;
+    background-color: #568130
+    ;
   }
   
 .home a:hover {
-    background-color: #94B2D9;
+    background-color: #9FC89C;
   }
 
   /*Headline*/
@@ -42,27 +48,30 @@ main{
 .headline h1{
   margin: 0;
   height: 70%;
-  padding-top: 45px;
-  padding-left: 20px;
-  background-color: rgb(119, 117, 117);
+  padding-top: 42px;
+  padding-left: 16%;
+  background-color: #2E282A;
+  color: white;
 }
 .headline h3{
 margin: 0;
-padding-top:17px;
-padding-left: 10px;
-background-color: bisque
+padding-top:15px;
+padding-bottom:4px;
+padding-left: 16%;
+background-color: #8D898A;
+color: #2E282A
 }
  
-h4{
-  padding-top: 14px;
-    margin-bottom: 0;
-}
+
 /*Charts*/
 .chart-box, .pie-and-total-box, .chart-box-wrapper {
   float: left;
   padding: 0px;
-  height: 45vh;
+  height: 42vh;
   min-height: 400px;
+  background-color: white;
+  border:solid 20px #EDEFEE;
+  border-radius:1 5px
 }
 .chart-box-wrapper{
   border: none
@@ -76,8 +85,12 @@ h4{
 }
 .pie-and-total-box{
   width: 100%;
+  
 }
-@media only screen and (max-width: 510px) {
+#total{
+  background-color: #2E282A;
+}
+@media only screen and (max-width: 540px) {
 
 .headline, .home {
   float:none;
@@ -86,10 +99,11 @@ h4{
 }
 .headline h1{
   padding-top:5px;
-  height: none;
+  padding-left: 10px
 }
+.headline h3{padding-left:0px}
 }
-@media only screen and (min-width: 725px) {
+@media only screen and (min-width: 925px) {
   /* Tablets and larger screens */
 .chart-box, .chart-box-wrapper{
   width: 80%;
@@ -103,27 +117,35 @@ h4{
 
 }
 
-@media only screen and (min-width: 1325px) {
+@media only screen and (min-width: 1350px) {
   /* Desktop and larger screens */
  
  .chart-box, .chart-box-wrapper{
    width: 50%;
    float: left;
    margin: 0;
+   
+  
+   
  }
 
 }
 
 #year, #month, #date-of-month, #day-of-week,#total-number{
   width: 100%;
-  height:100%;
-  border:solid red;
+  height:80%;
+ 
  
 
 }
 #total-number{
+  font-size: 80px;
+  background-color: #2E282A;
+  color: white;
+  text-align: center;
+}
+.total{
   font-size: 50px;
 }
-
 
 

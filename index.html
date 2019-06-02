@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Quicksand" rel="stylesheet">
+    
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
@@ -39,26 +40,26 @@
    </header>
   
     <main>  
-         <div class="chart-box">
+         <div class="chart-box"><h2>Year</h2>
           <div id="year"></div>
          </div>
-         <div class="chart-box">
+         <div class="chart-box"><h2>Month</h2>
           <div id="month" ></div>
          </div>
        
 
        
           <div class="chart-box">
-            <div id="date-of-month"></div>
+            <div id="date-of-month"><h2>Day of the Month</h2></div>
           </div>
 
           <div class="chart-box-wrapper">
              
                <div class="pie-and-total-box">
-                 <div id="day-of-week"></div>
+                 <div id="day-of-week"><h2>Day of the Week</h2></div>
                </div>
-               <div class="pie-and-total-box">
-                 <div id="total-number">Total number of births <br/></div>
+               <div class="pie-and-total-box" id="total">
+                 <div id="total-number"><span class="total">Total number of births </span><br/></div>
                </div>
           </div>
           
