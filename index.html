@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
@@ -19,11 +20,25 @@
 
 </head>
 <body>
+
+   
+       
+             
    <header>
     
+<div class="head-bar">
+  <div class="home">
+      <a href="index.html"><i class="fas fa-baby"></i></a> 
+   </div> 
+    <div class="headline">
+      <h1>Birthday once in four years!</h1>
+      <h3>P.S. If you was born on February 29th.</h3>
+    </div>
+  </div>
+
    </header>
   
-      
+    <main>  
          <div class="chart-box">
           <div id="year"></div>
          </div>
@@ -37,7 +52,7 @@
             <div id="date-of-month"></div>
           </div>
 
-          <div class="chart-box">
+          <div class="chart-box-wrapper">
              
                <div class="pie-and-total-box">
                  <div id="day-of-week"></div>
@@ -47,8 +62,7 @@
                </div>
           </div>
           
-      
-       
+      </main>       
 
 </body>
 </html>

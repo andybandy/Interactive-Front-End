@@ -1,15 +1,71 @@
-.scrolling-wrapper-flexbox {
+.scrolling-wrapper {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
 }
+* {
+  box-sizing: border-box;
+}
+main{
+  margin: 10px
+}
+/*Headbar*********************/
+.head-bar{
+  margin: 10px
+}
 
-.chart-box, .pie-and-total-box {
+/*Logo*/
+.home{
+  width: 15%;
+  height: 122px;
+  float: left
+}
+.home a {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.2s ease;
+    color: white;
+    font-size: 85px;
+    background-color: rgb(31, 119, 180);
+  }
+  
+.home a:hover {
+    background-color: #94B2D9;
+  }
+
+  /*Headline*/
+.headline{
+  height:120px;
+}
+.headline h1{
+  margin: 0;
+  height: 70%;
+  padding-top: 45px;
+  padding-left: 20px;
+  background-color: rgb(119, 117, 117);
+}
+.headline h3{
+margin: 0;
+padding-top:17px;
+padding-left: 10px;
+background-color: bisque
+}
+ 
+h4{
+  padding-top: 14px;
+    margin-bottom: 0;
+}
+/*Charts*/
+.chart-box, .pie-and-total-box, .chart-box-wrapper {
   float: left;
   padding: 0px;
   height: 45vh;
-  min-height: 300px;
- 
+  min-height: 400px;
+}
+.chart-box-wrapper{
+  border: none
 }
 
 /* small screen devices */
@@ -21,16 +77,28 @@
 .pie-and-total-box{
   width: 100%;
 }
+@media only screen and (max-width: 510px) {
 
+.headline, .home {
+  float:none;
+  width:100%;
+
+}
+.headline h1{
+  padding-top:5px;
+  height: none;
+}
+}
 @media only screen and (min-width: 725px) {
   /* Tablets and larger screens */
-.chart-box{
+.chart-box, .chart-box-wrapper{
   width: 80%;
   float: none;
   margin: auto;
+  min-width: 650px;
 }
 .pie-and-total-box{
-  width: 49%;
+  width: 50%;
 }
 
 }
@@ -38,7 +106,7 @@
 @media only screen and (min-width: 1325px) {
   /* Desktop and larger screens */
  
- .chart-box{
+ .chart-box, .chart-box-wrapper{
    width: 50%;
    float: left;
    margin: 0;
@@ -47,11 +115,11 @@
 }
 
 #year, #month, #date-of-month, #day-of-week,#total-number{
-  width: 95%;
-  height:95%;
-  border:solid;
-  border-radius: 5px;
-  margin: 20px;
+  width: 100%;
+  height:100%;
+  border:solid red;
+ 
+
 }
 #total-number{
   font-size: 50px;
