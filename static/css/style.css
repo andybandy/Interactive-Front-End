@@ -1,8 +1,4 @@
-.scrolling-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
+
 * {
   box-sizing: border-box;
 }
@@ -64,14 +60,15 @@ color: #2E282A
  
 
 /*Charts*/
-.chart-box, .pie-and-total-box, .chart-box-wrapper {
+.chart-box, .pie-box, .total-box, .chart-box-wrapper {
   float: left;
   padding: 0px;
   height: 42vh;
   min-height: 400px;
   background-color: white;
   border:solid 20px #EDEFEE;
-  border-radius:1 5px
+  
+  
 }
 .chart-box-wrapper{
   border: none
@@ -83,7 +80,7 @@ color: #2E282A
   width: 100%;
   min-width: 650px;
 }
-.pie-and-total-box{
+.pie-box, .total-box{
   width: 100%;
   
 }
@@ -91,7 +88,12 @@ color: #2E282A
   background-color: #2E282A;
 }
 @media only screen and (max-width: 540px) {
-
+  .scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  
+}
 .headline, .home {
   float:none;
   width:100%;
@@ -111,24 +113,22 @@ color: #2E282A
   margin: auto;
   min-width: 650px;
 }
-.pie-and-total-box{
-  width: 50%;
+.pie-box{
+  width: 60%;
 }
-
+.total-box{
+ width: 40%
+}
 }
 
 @media only screen and (min-width: 1350px) {
   /* Desktop and larger screens */
- 
+
  .chart-box, .chart-box-wrapper{
    width: 50%;
    float: left;
    margin: 0;
-   
-  
-   
  }
-
 }
 
 #year, #month, #date-of-month, #day-of-week,#total-number{
@@ -139,13 +139,14 @@ color: #2E282A
 
 }
 #total-number{
-  font-size: 80px;
+  font-size: 60px;
   background-color: #2E282A;
   color: white;
   text-align: center;
+  font-weight: bold;
 }
 .total{
-  font-size: 50px;
+  font-size: 40px;
 }
 
 
