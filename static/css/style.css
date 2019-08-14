@@ -1,61 +1,58 @@
 
-* {
-  box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 body{background-color: #EDEFEE;
   font-family: quicksand;
 }
 main{
   margin: 10px;
   text-align: center;
-  
-}
-/*Headbar*********************/
-.head-bar{
-  margin: 10px
 }
 
-/*Logo*/
-.home{
-  width: 15%;
-  height: 122px;
-  float: left
-}
-.home a {
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-    transition: all 0.2s ease;
-    color: white;
-    font-size: 82px;
-    background-color: #568130
-    ;
-  }
-  
-.home a:hover {
-    background-color: #9FC89C;
-  }
-
-  /*Headline*/
-.headline{
-  height:120px;
-}
-.headline h1{
+ul {
+  list-style-type: none;
   margin: 0;
-  height: 70%;
-  padding-top: 42px;
-  padding-left: 16%;
-  background-color: #2E282A;
-  color: white;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+
 }
-.headline h3{
-margin: 0;
-padding-top:15px;
-padding-bottom:4px;
-padding-left: 16%;
-background-color: #8D898A;
-color: #2E282A
+
+li {
+  float: left;
+  color: white;
+
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li h3{margin-bottom: 0px;
+      padding-top: 10px;
+    padding-left: 10px}
+
+
+
+
+/*Headbar*********************/
+#baby{
+  font-size: 40px;
+  background-color: #568130;
+  padding: 4px 26px;
+}
+#baby:hover{
+  background-color: #9FC89C;
+}
+#help{
+font-size: 40px;
+padding: 4px 16px;
+color: #568130;
+}
+#help:hover{
+
 }
  
 
@@ -67,14 +64,12 @@ color: #2E282A
   min-height: 400px;
   background-color: white;
   border:solid 20px #EDEFEE;
-  
-  
 }
 .chart-box-wrapper{
   border: none
 }
 
-/* small screen devices */
+
 .chart-box{
   text-align: center;
   width: 100%;
@@ -82,28 +77,37 @@ color: #2E282A
 }
 .pie-box, .total-box{
   width: 100%;
-  
+
 }
 #total{
   background-color: #2E282A;
+  
+}
+@media only screen and (max-width: 410px) {
+  ul {display: flex}
+  li h3{
+    margin:0px
+  }
 }
 @media only screen and (max-width: 540px) {
   .scrolling-wrapper {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-  
-}
-.headline, .home {
-  float:none;
-  width:100%;
+   }
 
+.chart-box{
+  text-align: left
 }
-.headline h1{
-  padding-top:5px;
-  padding-left: 10px
 }
-.headline h3{padding-left:0px}
+
+@media only screen and (min-width: 725px){
+.pie-box{
+  width: 60%;
+}
+.total-box{
+ width: 40%
+}
 }
 @media only screen and (min-width: 925px) {
   /* Tablets and larger screens */
@@ -113,12 +117,7 @@ color: #2E282A
   margin: auto;
   min-width: 650px;
 }
-.pie-box{
-  width: 60%;
-}
-.total-box{
- width: 40%
-}
+
 }
 
 @media only screen and (min-width: 1350px) {

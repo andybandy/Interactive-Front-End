@@ -156,7 +156,9 @@ function show_total_number(ndx, i){
     dc.numberDisplay("#total-number")
     .transitionDuration(i)
     .valueAccessor(function(d){return d})
-    .group(group);   
+    .group(group);
+
+   
 }     
 
 
@@ -170,8 +172,6 @@ $(window).on('resize', function(e) {
 
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
-
-
     
     queue()
     .defer(d3.csv, "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv")
