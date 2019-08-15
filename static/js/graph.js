@@ -102,7 +102,7 @@ function show_day_of_week(ndx, i){
       .innerRadius(20)
       .externalRadiusPadding(0)
       .transitionDuration(i)
-      .ordinalColors(['#A2BA8E', '#568130', '#FFC03A', '#D1920D','#BA820B','#BC7961','#972D07'])
+      .ordinalColors([ '#496E29', '#6F944F', '#89A76E','#A2BA8D','#BBCDAC','#B6C9A6','#D5E0CB'])
       .dimension(dim)
       .group(group)
       .legend(dc.legend().x(20).y(10).legendText(function(d ) {
