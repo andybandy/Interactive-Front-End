@@ -30,8 +30,8 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-li h3{margin-bottom: 0px;
-      padding-top: 10px;
+li h4{margin-bottom: 0px;
+      padding-top: 30px;
     padding-left: 10px}
 
 
@@ -45,11 +45,13 @@ li h3{margin-bottom: 0px;
 }
 #baby:hover{
   background-color: #9FC89C;
+  color: white;
 }
 #help{
 font-size: 40px;
 padding: 4px 16px;
-color: #568130;
+color: white;
+
 }
 #help:hover{
 
@@ -83,10 +85,16 @@ color: #568130;
   background-color: #2E282A;
   
 }
-@media only screen and (max-width: 410px) {
+#small{
+  padding: 4px;
+  background-color: #568130;
+  color: white;
+}
+@media only screen and (max-width: 440px) {
   ul {display: flex}
-  li h3{
-    margin:0px
+  li h4{
+    margin:0px;
+    padding-top: 10px
   }
 }
 @media only screen and (max-width: 540px) {

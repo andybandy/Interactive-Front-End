@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Quicksand" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
@@ -28,12 +29,40 @@
    <header>
   <ul>
       <li><a href="index.html" id="baby"><i class="fas fa-baby"></i></a></li>
-      <li><h3> US birth data dashboard</h3></li>
-    
-      <li style="float:right"><a href="" id="help"><i class="fas fa-question-circle"></i></a></li>
+      <li><h4> US birth data dashboard</h4></li>
+      <li style="float:right"><a href="" id="help" data-toggle="modal" data-target="#helpModal"><i class="fas fa-question-circle"></i></a></li>
     </ul>
-   </header>
   
+   </header>
+  <!--Bootstrap Modal Pop Up (contact form)-->
+  <div class="modal fade" id="helpModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modalHeader">
+            <h4>US birth data dashboard</h4>
+          </div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+      
+        <div class="modal-body">
+                    The dashboard reflects the U.S. births data for the years 2000 to 2014, as provided by the Social Security Administration.<br>
+                    <hr>
+                     <h4> How to use</h4>
+                     <p>Simply select your dates by choosing relevant bars, and find out the total births for the selected time frame. </p>
+                     <p>To reset, click the baby icon <i id="small" class="fas fa-baby"></i> located at the top left</p>
+        </div>
+        <div class="modal-footer">
+                 <button type="button" class="btn-close btn btn-default btn-sm" data-dismiss="modal">
+                    Close
+                </button>
+        </div>
+      </div>
+      
+    </div>
+    </div>
     <main>  
     <div class="scrolling-wrapper">
          <div class="chart-box">
@@ -62,6 +91,6 @@
       
           
       </main>       
-
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

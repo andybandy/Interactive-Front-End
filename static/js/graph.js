@@ -42,11 +42,10 @@ queue()
             .elasticY(true)
             .xAxisLabel("Year")
             .yAxisLabel("Births")
-            .yAxis().ticks(10);
-            
+            .yAxis().ticks(10).tickFormat(d3.format('s'));
     }
 
-/*Bar chart showing montly births */
+/*Row chart showing montly births */
 function show_month(ndx, i){
 
     var dim = ndx.dimension(dc.pluck('month'));
@@ -86,7 +85,6 @@ function show_month(ndx, i){
           return "November";
         if(d.key == 12)
           return "December";
-       
       })
 }
 
@@ -146,7 +144,7 @@ function show_day_of_month(ndx, i) {
         .elasticY(true)
         .xAxisLabel("Day")
         .yAxisLabel("Births")
-        .yAxis().ticks(10);
+        .yAxis().ticks(10).tickFormat(d3.format('s'));
        
   }
 /*Number display chart showing total births*/
