@@ -54,7 +54,9 @@ Testing was done with Google Chrome developer tools and manually on different br
 * Nokia 6.1 (Chrome)
 * Samsung Galaxy Note 8 (Chrome)
 
-
+## Wireframes 
+* [Webpage](images/wireframe.png)
+* [Help pop-up](images/helpWireframe.png)
 
  ## Deployment
 The website is published on github page at https://andriusci.github.io/Interactive-Front-End/
