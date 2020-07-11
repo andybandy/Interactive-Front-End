@@ -27,4 +27,17 @@ Users playing around with the charts might get stuck or simply change their mind
 * **Bootstrap** (Modal pop up)
 
 ### Libraries
-* **[DC.js]**
+* **DC.js**.Simple yet powerful javascript library for data visualization and analysis in the browser and on mobile devices.
+* **D3.js**. JavaScript library for manipulating documents based on data. Requaired for DC.js
+* **Crossfilter**.Supports interaction with dataset. 
+
+## Testing
+* **HTML** The website has passed 3w.org markup validation.
+* **JavaScript** Chrome developer tools have shown no errors.
+* **Reset button** Resets the charts as intended
+* **Help button** If clicked brings modal pop-up with instructions to the screen.
+* **Charts** All charts respond to clicks and affects each other as expected. However on mobile screens the pie chart overlaps with the legend indicating days. This bug will be fixed in the next version release:).
+
+
+
+
