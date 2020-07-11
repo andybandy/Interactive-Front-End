@@ -41,13 +41,13 @@ Users playing around with the charts might get stuck or simply change their mind
 ## Responsiveness
  The website and the charts adjusts to different screen sizes. However, on the devices smaller that 610px the bars and the dimension numbers appear to overlap. Therefore, the decision was made to keep the charts bigger than 610px wide and implement horizontal scrolling.
 Testing was done with Google Chrome developer tools and manually on different browsers and mobile devices.
-**Browsers used:**
+### Browsers used:
 * Chrome Version 67.0.3396.62
 * Cromium Version 76.0.3809.87
 * Opera 62
 * Firefox 68
 * Microsoft Edge 42
-**Mobile devices used:**
+### Mobile devices used:
 * iPhone 5 (Safari, Chrome)
 * iPad (Safari, Crome)
 * Nokia Lumia 830 (Internet Exploler, Chrome)
@@ -56,7 +56,15 @@ Testing was done with Google Chrome developer tools and manually on different br
 
 
 
- Deployment.
+ ## Deployment
 The website is published on github page at https://andriusci.github.io/Interactive-Front-End/
+
+#### Deployment procedure
+ From the repository:
+1. Go to “Settings”
+2. Scroll down to the “Github Pages” section
+3. Choose the source form the drop down menu (Master Branch in this case).
+
+## Credits
 
 
