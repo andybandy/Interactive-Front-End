@@ -18,6 +18,8 @@ Users playing around with the charts might get stuck or simply change their mind
 * **Pie chart showing days of the week.** Each slice represents a day of the week.
 * **Restart Icon button.** Resets all charts to their original state
 * **Help icon button.** Provides explanation about the charts.
+### Features left to implement:
+* **Contact form** The users might what to contact someone regarding the data dashbord. Therefore, there should be an option such us contact form that, if submitted, would send an email to the site owner.
 
 ## Technologies used
 * **Html5**
