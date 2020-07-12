@@ -69,6 +69,6 @@ The website is published on github page at https://andriusci.github.io/Interact
 2. Scroll down to the “Github Pages” section
 3. Choose the source form the drop down menu (Master Branch in this case).
 
-## Credits
+
 
 
